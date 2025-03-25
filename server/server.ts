@@ -4,7 +4,8 @@ import { serveStatic } from "@hono/node-server/serve-static";
 
 const app = new Hono();
 app.get("/api/hello", async (c) => {
-  return c.text("Hello World!");
+  return c.text("Hello Hono!");
 });
 app.use("*", serveStatic({ root: "../dist" }));
-serve(app);
+const port = process.env.PORT ? parseInt(process.env.PORT) : 3000;
+serve({ ...app, port });
