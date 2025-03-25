@@ -7,7 +7,9 @@
     "test": "tsc --noEmit && prettier --check .",
     "dev": "vite",
     "build": "vite build",
-    "prepare": "husky"
+    "prepare": "husky",
+    "start": "cd server && npm start",
+    "postinstall": "cd server && npm install --include=dev"
   },
   "repository": {
     "type": "git",
